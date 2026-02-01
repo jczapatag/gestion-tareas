@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "DHCIv2k4APo=",
+  "success": true,
+  "projectFilePath": "/Users/juancarloszapatagracia/Documents/universidad Incca/Electiva2/Gestion-Tareas/Gestion-Tareas.csproj",
+  "expectedPackageFiles": [
+    "/Users/juancarloszapatagracia/.nuget/packages/microsoft.aspnetcore.openapi/10.0.2/microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "/Users/juancarloszapatagracia/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
