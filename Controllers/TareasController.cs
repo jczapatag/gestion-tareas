@@ -71,6 +71,25 @@ public IActionResult DeleteTarea(int id)
     return NoContent();
 }
 
+[HttpPatch("{id}/completar")]
+public ActionResult<TaskModel> CompletarTarea(int id)
+{
+    // 1) Buscar la tarea
+    var tareaExistente = _tareas.FirstOrDefault(t => t.Id == id);
+
+    // 2) Si no existe → 404
+    if (tareaExistente == null)
+    {
+        return NotFound($"No se encontró una tarea con Id = {id}");
+    }
+
+    // 3) Marcar como completada
+    tareaExistente.IsCompleted = true;
+
+    // 4) Devolver 200 con la tarea actualizada
+    return Ok(tareaExistente);
+}
+
 
 }
 }
