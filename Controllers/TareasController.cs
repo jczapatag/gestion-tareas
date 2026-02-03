@@ -52,5 +52,25 @@ public ActionResult<TaskModel> UpdateTarea(int id, [FromBody] UpdateTaskDto dto)
     return Ok(tareaExistente);
 }
 
+[HttpDelete("{id}")]
+public IActionResult DeleteTarea(int id)
+{
+    // 1) Buscar la tarea
+    var tareaExistente = _tareas.FirstOrDefault(t => t.Id == id);
+
+    // 2) Si no existe → 404
+    if (tareaExistente == null)
+    {
+        return NotFound($"No se encontró una tarea con Id = {id}");
+    }
+
+    // 3) Eliminar de la lista
+    _tareas.Remove(tareaExistente);
+
+    // 4) 204 No Content (eliminado correctamente)
+    return NoContent();
+}
+
+
 }
 }
